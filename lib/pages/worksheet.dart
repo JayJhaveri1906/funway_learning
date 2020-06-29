@@ -36,37 +36,40 @@ class _worksheetState extends State<worksheet> {
           title: Text("Learning Resources",style: AppTheme.page_heading1),
           centerTitle: true,
         ),
-        body: Center(
-          child: Column(
-            children: <Widget>[
-              RepaintBoundary(
-                key: _globalKey,
-                child: Container(
-                  height: 600,
-                  width: 400,
-                  child: Image.asset("assets/images/worksheet.png",fit: BoxFit.cover,),
-                  //width: MediaQuery.of(context).size;
+        body: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              children: <Widget>[
+                RepaintBoundary(
+                  key: _globalKey,
+                  child: Container(
+                    height: 600,
+                    width: 400,
+                    child: Image.asset(
+                      "assets/images/worksheet.png", fit: BoxFit.cover,),
+                    //width: MediaQuery.of(context).size;
 
-                  color: Colors.grey,
-                ),
-              ),
-              Container(
-
-                padding: EdgeInsets.only(top: 15),
-                child: RaisedButton(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.0),
-                      side: BorderSide(color: Colors.red)
+                    color: Colors.grey,
                   ),
-                  color: Colors.orangeAccent,
-                  onPressed: _saveScreen,
-                  child: Text("Download Worksheet"),
                 ),
-                width: 200,
-                height: 60,
-              ),
+                Container(
 
-            ],
+                  padding: EdgeInsets.only(top: 15),
+                  child: RaisedButton(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18.0),
+                        side: BorderSide(color: Colors.red)
+                    ),
+                    color: Colors.orangeAccent,
+                    onPressed: _saveScreen,
+                    child: Text("Download Worksheet"),
+                  ),
+                  width: 200,
+                  height: 60,
+                ),
+
+              ],
+            ),
           ),
         ));
   }
